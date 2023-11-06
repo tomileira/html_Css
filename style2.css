@@ -1,0 +1,115 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background: #c5d7e2;
+    color: #000;
+    font-family: 'Roboto', sans-serif;
+}
+
+.contenedor {
+    width: 90%;
+    max-width: 1000px;
+    margin: 20px auto;
+    display: grid;
+    grid-gap: 20px;
+    grid-template-columns: repeat(5, 1fr);
+    grid-template-rows: repeat(4, auto);
+
+    /*grid-template-areas: "header header header"
+                         "contenido contenido sidebar"
+                         "widget-1 widget-2 sidebar"
+                         "footer footer footer";*/
+}
+
+.contenedor>div,
+.contenedor .header,
+.contenedor .contenido,
+.contenedor .sidebar,
+.contenedor .footer {
+    background: #ffffff;
+    padding: 20px;
+    border-radius: 4px;
+}
+
+.contenedor .header {
+    background: #12203E;
+    color: #fff;
+    grid-area: 1/1/2/6;
+    /*grid-area: header;*/
+}
+
+.contenedor .contenido {
+    grid-area: 2/2/3/5;
+}
+
+.contenedor .sidebar {
+    grid-area: 2/1/3/2;
+    background: #78a1ec;
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 100px;
+    /*grid-area: sidebar;*/
+}
+
+.contenedor .sidebar2 {
+    grid-area: 2/5/3/6;
+    background: #78a1ec;
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 100px;
+    /*grid-area: sidebar;*/
+}
+
+.contenedor .widget-1,
+.contenedor .widget-2,
+.contenedor .widget-3,
+.contenedor .widget-4,
+.contenedor .widget-5 {
+    background: #3053b4;
+    color: #fff;
+    height: 100px;
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+
+.contenedor .footer {
+    background: #25282e;
+    color: #fff;
+    grid-area: 4/1/5/6;
+    padding: 5%;
+}
+
+@media screen and (max-width: 768px) {
+    .contenedor {
+        grid-template-areas: "header header header"
+            "contenido contenido contenido"
+            "sidebar sidebar sidebar2"
+            "widget-1 widget-2 widget-3"
+            "widget-4 widget-5 widget-5"
+            "footer footer footer";
+    }
+}
+
+@media screen and (max-width:500px) {
+    .contenedor {
+        grid-template-areas: "header header"
+            "contenido contenido"
+            "sidebar sidebar2"
+            "widget-1 widget-2"
+            "widget-3 widget-4"
+            "widget-5 widget-5"
+
+            "footer footer";
+    }
+
+}
